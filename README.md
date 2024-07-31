@@ -98,3 +98,9 @@ Files:
 
 Dockerfile: Docker configuration for the Django application.
 docker-compose.yml: Configuration for running multiple services (Django, Redis, Celery, RabbitMQ) together.
+
+### Which weather API to use to fetch data?
+OpenWeatherMap: Offers a free tier with a limited number of API calls per minute. Provides current weather data, forecasts, and historical data.
+
+### Which email service we will use
+Google - Gmail app
