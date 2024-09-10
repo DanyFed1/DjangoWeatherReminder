@@ -6,6 +6,7 @@ import os
 
 # Load environment variables from .env file
 load_dotenv()
+
 def fetch_weather_data(city, use_lat_lon=True):
     """Fetches weather data from OpenWeatherMap API for a given city."""
     api_key = os.getenv('OPENWEATHERMAP_API_KEY')

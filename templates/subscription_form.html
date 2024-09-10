@@ -1,0 +1,30 @@
+<h2>Manage Subscriptions</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="city">City:</label>
+    <select name="city_id" id="city">
+        {% for city in cities %}
+        <option value="{{ city.id }}">{{ city.name }}, {{ city.country }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="notification_period">Notifications per day:</label>
+    <select name="notification_period" id="notification_period">
+        <option value="1">Once per day</option>
+        <option value="3">Every 8 hours</option>
+        <option value="6">Every 4 hours</option>
+        <option value="12">Every 2 hours</option>
+    </select>
+
+    <label for="notify_via">Notify via:</label>
+    <select name="notify_via" id="notify_via">
+        <option value="email">Email</option>
+        <option value="webhook">Webhook</option>
+    </select>
+
+    <label for="webhook_url">Webhook URL (optional):</label>
+    <input type="url" name="webhook_url" id="webhook_url">
+
+    <button type="submit">Submit</button>
+</form>

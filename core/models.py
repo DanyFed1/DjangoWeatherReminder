@@ -19,6 +19,7 @@ class Subscription(models.Model):
     webhook_url = models.CharField(max_length=255, null=True, blank=True)  # Only used if notify_via is 'webhook'
     active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    last_notified_at = models.DateTimeField(null=True, blank=True)  # Track when the last notification was sent
 
     def __str__(self):
         return f"{self.user.username} - {self.city.name} ({self.notification_period} hours)"
